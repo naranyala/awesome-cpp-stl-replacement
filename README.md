@@ -16,7 +16,7 @@ A curated catalog of C++ libraries that replace, extend, or complement container
 - [Numeric and data-oriented libraries](#numeric-and-data-oriented-libraries)
 - [Memory and allocation](#memory-and-allocation)
 - [Testing and benchmarking](#testing-and-benchmarking)
-- [Related C++ libraries](#related-c-libraries)
+- [Complementary C++ libraries and tools](#complementary-c-libraries-and-tools)
 - [Contributing](#contributing)
 
 ## Complete standard-library implementations
@@ -111,7 +111,7 @@ These projects target specific performance needs such as SIMD, concurrent data s
 
 ### Concurrent queues and task scheduling
 
-- [moodycamel::ConcurrentQueue](https://github.com/cameron314/concurrentqueue) — A lock-free concurrent queue for producer/consumer workloads; review its documented ordering and memory-model guarantees when choosing it.
+- [moodycamel::ConcurrentQueue](https://github.com/cameron314/concurrentqueue) — A concurrent queue for producer/consumer workloads; review its documented ordering and memory-model guarantees when choosing it.
 - [oneTBB](https://github.com/oneapi-src/oneTBB) — Threading Building Blocks with task scheduling, parallel algorithms, and concurrent containers.
 - [Taskflow](https://github.com/taskflow/taskflow) — A task-based parallel programming framework for building and executing task graphs.
 - [BS::thread_pool](https://github.com/bshoshany/thread-pool) — A lightweight C++ thread-pool library for submitting tasks to worker threads.
@@ -147,14 +147,33 @@ These do not replace the standard library generally, but provide specialized fac
 - [Celero](https://github.com/DigitalInBlue/Celero) — A C++ benchmarking framework for comparing performance.
 - [nanobench](https://github.com/martinus/nanobench) — A small, dependency-free microbenchmarking library for C++.
 
-## Related C++ libraries
+## Complementary C++ libraries and tools
 
-Useful parts of the wider C++ ecosystem that are often adopted alongside standard-library alternatives.
+These are not primarily STL replacements. They provide common capabilities—such as logging, serialization, testing, command-line parsing, and configuration—that work alongside the containers, algorithms, and utilities listed above.
 
-- [Boost](https://www.boost.org/) — A broad collection of portable C++ libraries; many are complementary extensions rather than replacements for the standard library.
-- [Abseil](https://abseil.io/) — Google’s collection of C++ libraries designed to work well together and complement the standard library.
-- [Folly](https://github.com/facebook/folly) — Production-oriented C++ components from Meta, including containers, utilities, and concurrency tools.
-- [BDE](https://github.com/bloomberg/bde) — Bloomberg’s development environment and libraries, including components for containers, utilities, and foundational types.
+### More components from ecosystems already listed
+
+- [Boost.Asio](https://www.boost.org/doc/libs/release/doc/html/boost_asio.html) — Asynchronous I/O and networking; complements Boost.Container and Boost.Utility in networked applications.
+- [Boost.Serialization](https://www.boost.org/doc/libs/release/libs/serialization/) — Object serialization for archiving and data exchange.
+- [Boost.Log](https://www.boost.org/doc/libs/release/libs/log/) — Logging framework with filtering, sinks, and formatting.
+- [Boost.Test](https://www.boost.org/doc/libs/release/libs/test/) — Unit-testing framework for C++ projects using Boost or other libraries.
+- [Abseil Status and StatusOr](https://abseil.io/docs/cpp/guides/status) — Error/status reporting types that complement Abseil Containers and other components.
+- [Abseil Flags](https://abseil.io/docs/cpp/guides/flags) — Command-line flag handling for applications using Abseil.
+- [Abseil Time](https://abseil.io/docs/cpp/guides/time) — Time, duration, and timezone facilities that complement standard chrono utilities.
+- [oneTBB](https://github.com/oneapi-src/oneTBB) — Its task scheduler and concurrent containers complement the SIMD and parallel-algorithm libraries listed above.
+
+### Standalone complementary tools
+
+- [spdlog](https://github.com/gabime/spdlog) — Logging library with formatting support; can use `fmt` or `std::format` depending on configuration.
+- [Quill](https://github.com/odygrd/quill) — Asynchronous logging library for C++ applications.
+- [cereal](https://github.com/USCiLab/cereal) — Header-only serialization library for C++ data structures.
+- [Protocol Buffers](https://github.com/protocolbuffers/protobuf) — Schema-based serialization and code generation for interoperable data formats.
+- [FlatBuffers](https://github.com/google/flatbuffers) — Schema-based serialization designed for direct access to serialized data.
+- [Catch2](https://github.com/catchorg/Catch2) — C++ testing framework with a test runner and assertion library.
+- [doctest](https://github.com/doctest/doctest) — Lightweight, fast, single-header testing framework.
+- [CLI11](https://github.com/CLIUtils/CLI11) — Command-line parser for C++ applications.
+- [toml++](https://github.com/marzer/tomlplusplus) — Header-only TOML parser and serializer for C++.
+- [yaml-cpp](https://github.com/jbeder/yaml-cpp) — YAML parser and emitter for C++.
 
 ## Contributing
 
