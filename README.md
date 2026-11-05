@@ -11,6 +11,7 @@ A curated catalog of C++ libraries that replace, extend, or complement container
 - [Ranges, iterators, and algorithms](#ranges-iterators-and-algorithms)
 - [Strings, formatting, and text](#strings-formatting-and-text)
 - [Type utilities and safer interfaces](#type-utilities-and-safer-interfaces)
+- [Small, focused libraries](#small-focused-libraries)
 - [Numeric and data-oriented libraries](#numeric-and-data-oriented-libraries)
 - [Memory and allocation](#memory-and-allocation)
 - [Testing and benchmarking](#testing-and-benchmarking)
@@ -42,7 +43,7 @@ These implement the C++ standard library itself. They are usually selected throu
 - [Tessil’s containers](https://github.com/Tessil) — A family of hash maps and sets, including [robin-map](https://github.com/Tessil/robin-map), [sparse-map](https://github.com/Tessil/sparse-map), and [ordered-map](https://github.com/Tessil/ordered-map).
 - [F14](https://github.com/facebook/folly/tree/main/folly/container) — Folly’s hash-table family, with variants for different storage and performance trade-offs.
 - [Boost.Unordered](https://www.boost.org/doc/libs/release/libs/unordered/) — Boost’s unordered associative containers, including open-addressing containers.
-- [parallel-hashmap](https://github.com/greg7mdp/parallel-hashmap) — A family of fast, memory-friendly hash maps and sets based on Google’s SwissTable design, including parallel variants.
+- [parallel-hashmap](https://github.com/greg7mdp/parallel-hashmap) — A family of hash maps and sets based on Google’s SwissTable design, including parallel variants.
 
 ### Specialized containers
 
@@ -84,13 +85,25 @@ These implement the C++ standard library itself. They are usually selected throu
 - [magic_enum](https://github.com/Neargye/magic_enum) — Header-only utilities for reflecting enum names and values at compile time, within documented compiler limitations.
 - [nameof](https://github.com/Neargye/nameof) — Header-only utilities for obtaining names of C++ entities at compile time, within documented compiler limitations.
 
+## Small, focused libraries
+
+Small, single-purpose libraries can be useful when you only need one missing facility instead of adopting a larger framework. “Small” can refer to scope, dependencies, or integration style; check each project’s requirements and maintenance status.
+
+- [expected-lite](https://github.com/martinmoene/expected-lite) — Lightweight `expected` implementation for error handling, including support for older C++ standards.
+- [scope-lite](https://github.com/martinmoene/scope-lite) — Scope guards and scope-based resource cleanup utilities.
+- [string-view-lite](https://github.com/martinmoene/string-view-lite) — A `string_view` implementation for projects targeting older C++ standards.
+- [function2](https://github.com/Naios/Function2) — A configurable polymorphic function wrapper intended as an alternative to `std::function` and related callable wrappers.
+- [frozen](https://github.com/serge-sans-paille/frozen) — Header-only compile-time maps, sets, and other immutable containers.
+- [nanorange](https://github.com/tcbrindle/NanoRange) — A compact ranges library for projects that need ranges support on older C++ standards.
+- [bitsery](https://github.com/fraillt/bitsery) — A compact, header-only C++ serialization library with configurable serialization formats.
+
 ## Numeric and data-oriented libraries
 
 These do not replace the standard library generally, but provide specialized facilities often needed alongside its containers and algorithms.
 
 - [Eigen](https://gitlab.com/libeigen/eigen) — Template library for linear algebra, matrices, vectors, and related numerical operations.
 - [xtensor](https://github.com/xtensor-stack/xtensor) — Multi-dimensional arrays and numerical expressions with an API inspired by NumPy.
-- [Blaze](https://bitbucket.org/blaze-lib/blaze/src/master/) — High-performance dense and sparse arithmetic for vectors and matrices.
+- [Blaze](https://bitbucket.org/blaze-lib/blaze/src/master/) — Dense and sparse arithmetic for vectors and matrices.
 - [Boost.Multiprecision](https://www.boost.org/doc/libs/release/libs/multiprecision/) — Arbitrary-precision integer, rational, and floating-point types.
 - [Boost.NumericConversion](https://www.boost.org/doc/libs/release/libs/numeric/conversion/) — Safer and more explicit numeric conversions.
 
