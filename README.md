@@ -12,6 +12,7 @@ A curated catalog of C++ libraries that replace, extend, or complement container
 - [Strings, formatting, and text](#strings-formatting-and-text)
 - [Type utilities and safer interfaces](#type-utilities-and-safer-interfaces)
 - [Small, focused libraries](#small-focused-libraries)
+- [Performance-focused libraries](#performance-focused-libraries)
 - [Numeric and data-oriented libraries](#numeric-and-data-oriented-libraries)
 - [Memory and allocation](#memory-and-allocation)
 - [Testing and benchmarking](#testing-and-benchmarking)
@@ -33,7 +34,7 @@ These implement the C++ standard library itself. They are usually selected throu
 - [EASTL](https://github.com/electronicarts/EASTL) — Containers and algorithms designed for performance-sensitive applications, especially games and memory-constrained environments.
 - [Boost.Container](https://www.boost.org/doc/libs/release/libs/container/) — Standard-like containers, including flat, node-based, and allocator-aware options.
 - [Abseil Containers](https://abseil.io/docs/cpp/guides/container) — Google’s hash and ordered containers, including `flat_hash_map` and `flat_hash_set`.
-- [Folly](https://github.com/facebook/folly) — Facebook’s collection of C++ infrastructure libraries, with high-performance containers such as F14 hash tables.
+- [Folly](https://github.com/facebook/folly) — Meta’s collection of C++ infrastructure libraries, with high-performance containers such as F14 hash tables.
 - [Qt Containers](https://doc.qt.io/qt-6/containers.html) — Containers integrated with the Qt framework; APIs and behavior differ from the standard library.
 - [The Embedded Template Library (ETL)](https://github.com/ETLCPP/etl) — Containers and utilities designed for embedded systems, with static-capacity options and no required dynamic allocation for many components.
 
@@ -49,7 +50,7 @@ These implement the C++ standard library itself. They are usually selected throu
 
 - [Boost.Container](https://www.boost.org/doc/libs/release/libs/container/) — Includes alternatives such as `flat_map`, `flat_set`, `static_vector`, and `small_vector`.
 - [LLVM ADT](https://llvm.org/docs/ProgrammersManual.html#llvm-adt) — LLVM support types and data structures, including `SmallVector`, `DenseMap`, and `StringRef`; primarily intended for LLVM-related code.
-- [Abseil B-tree containers](https://abseil.io/docs/cpp/guides/container) — B-tree ordered maps and sets that offer a different storage and locality trade-off from node-based `std::map` and `std::set`.
+- [Abseil B-tree containers](https://abseil.io/docs/cpp/guides/container) — B-tree ordered maps and sets that offer different storage and locality trade-offs from node-based `std::map` and `std::set`.
 - [plf::colony](https://github.com/mattreecebentley/plf_colony) — An unordered container designed for fast insertion and erasure while preserving pointers and iterators to non-erased elements.
 - [Boost.Intrusive](https://www.boost.org/doc/libs/release/doc/html/intrusive.html) — Intrusive containers, where hooks are embedded in user objects to avoid separate node allocations.
 
@@ -96,6 +97,29 @@ Small, single-purpose libraries can be useful when you only need one missing fac
 - [frozen](https://github.com/serge-sans-paille/frozen) — Header-only compile-time maps, sets, and other immutable containers.
 - [nanorange](https://github.com/tcbrindle/NanoRange) — A compact ranges library for projects that need ranges support on older C++ standards.
 - [bitsery](https://github.com/fraillt/bitsery) — A compact, header-only C++ serialization library with configurable serialization formats.
+
+## Performance-focused libraries
+
+These projects target specific performance needs such as SIMD, concurrent data structures, or task scheduling. They are not blanket replacements for the standard library: measure with representative workloads, and consider portability, memory use, and API trade-offs.
+
+### SIMD and data-parallel computing
+
+- [Google Highway](https://github.com/google/highway) — Portable SIMD; write vectorized code that can target multiple CPU architectures.
+- [xsimd](https://github.com/xtensor-stack/xsimd) — C++ wrappers for SIMD intrinsics across supported architectures.
+- [libsimdpp](https://github.com/p12tic/libsimdpp) — Header-only SIMD abstraction for writing portable vectorized code.
+- [oneDPL](https://github.com/uxlfoundation/oneDPL) — Data-parallel algorithms and execution policies for CPUs and supported accelerators.
+
+### Concurrent queues and task scheduling
+
+- [moodycamel::ConcurrentQueue](https://github.com/cameron314/concurrentqueue) — A lock-free concurrent queue for producer/consumer workloads; review its documented ordering and memory-model guarantees when choosing it.
+- [oneTBB](https://github.com/oneapi-src/oneTBB) — Threading Building Blocks with task scheduling, parallel algorithms, and concurrent containers.
+- [Taskflow](https://github.com/taskflow/taskflow) — A task-based parallel programming framework for building and executing task graphs.
+- [BS::thread_pool](https://github.com/bshoshany/thread-pool) — A lightweight C++ thread-pool library for submitting tasks to worker threads.
+
+### Profiling and tracing
+
+- [Tracy](https://github.com/wolfpld/tracy) — A real-time profiler for CPU, GPU, memory allocation, and application tracing.
+- [Perfetto](https://github.com/google/perfetto) — A suite for collecting and viewing system-wide and application-level traces.
 
 ## Numeric and data-oriented libraries
 
